@@ -1,9 +1,8 @@
 
 import joblib
-import pytest
 from fastapi.testclient import TestClient
 
-from src.app.main import app, MODEL_PATH
+from src.app.main import MODEL_PATH, app
 
 client = TestClient(app)
 
