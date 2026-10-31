@@ -4,8 +4,7 @@ from pathlib import Path
 import joblib
 import pandas as pd
 from fastapi import FastAPI
-from pydantic import BaseModel, Field, ConfigDict
-
+from pydantic import BaseModel, ConfigDict, Field
 
 ROOT = Path(__file__).resolve().parents[2]
 MODEL_PATH = ROOT / "model.joblib"
