@@ -15,7 +15,8 @@ WORKDIR /app
 COPY --from=builder /install /usr/local
 
 COPY src/ ./src/
-COPY model.joblib .
+COPY artifacts/model.joblib ./artifacts/model.joblib
+COPY artifacts/metadata.json ./artifacts/metadata.json
 COPY sample_request.json .
 
 RUN useradd --create-home --uid 10001 appuser
