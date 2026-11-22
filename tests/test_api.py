@@ -18,7 +18,10 @@ VALID_CUSTOMER = {
 def test_api_contract():
     response = client.get("/health")
     assert response.status_code == 200
-    assert response.json() == {"status": "ok"}
+    data = response.json()
+    assert data["status"] == "ok"
+    assert data["model_version"]
+    assert data["mlflow_run_id"]
 
 
 def test_model_loads():
